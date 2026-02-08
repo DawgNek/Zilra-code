@@ -203,7 +203,7 @@ function updateThemeIcon() {
 // ===== LANGUAGE SYSTEM =====
 const TRANSLATIONS = {
     en: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "Work", team: "Team", about: "About", contact: "Contact" },
         hero: { line1: "We create", line2: "digital", line3: "experiences", scroll: "Scroll" },
         work: { 
@@ -256,7 +256,7 @@ const TRANSLATIONS = {
         }
     },
     vi: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "Dự án", team: "Đội ngũ", about: "Giới thiệu", contact: "Liên hệ" },
         hero: { line1: "Chúng tôi tạo ra", line2: "trải nghiệm", line3: "số ấn tượng", scroll: "Cuộn" },
         work: { 
@@ -309,7 +309,7 @@ const TRANSLATIONS = {
         }
     },
     ja: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "作品", team: "チーム", about: "会社概要", contact: "お問い合わせ" },
         hero: { line1: "私たちは", line2: "デジタル", line3: "体験を作ります", scroll: "スクロール" },
         work: { 
@@ -362,7 +362,7 @@ const TRANSLATIONS = {
         }
     },
     zh: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "作品", team: "团队", about: "关于", contact: "联系" },
         hero: { line1: "我们创造", line2: "数字", line3: "体验", scroll: "滚动" },
         work: { 
@@ -415,7 +415,7 @@ const TRANSLATIONS = {
         }
     },
     de: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "Arbeiten", team: "Team", about: "Über uns", contact: "Kontakt" },
         hero: { line1: "Wir schaffen", line2: "digitale", line3: "Erlebnisse", scroll: "Scrollen" },
         work: { 
@@ -468,7 +468,7 @@ const TRANSLATIONS = {
         }
     },
     ru: {
-        logo: "ALTARE",
+        logo: "Zilra",
         nav: { work: "Работы", team: "Команда", about: "О нас", contact: "Контакты" },
         hero: { line1: "Мы создаем", line2: "цифровые", line3: "впечатления", scroll: "Прокрутить" },
         work: { 
