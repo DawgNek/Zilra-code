@@ -1684,3 +1684,7 @@ section {
 .team-member:hover .member-photo {
     transform: scale(1.05);
 }
+
+.theme-toggle {
+    display: none !important;
+}
