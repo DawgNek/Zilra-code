@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTARE | Premium Portfolio</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS for initial load */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+    /* Vẫn hiển thị content, preloader phủ lên trên */
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    z-index: 9999;
+    /* Preloader sẽ che hết content */
+}
+        body.loaded {
+            opacity: 1;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .preloader-text {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 0.3s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-text">ALTARE</div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container"></div>
+
+    <!-- Control Panel -->
+<div class="control-panel" id="control-panel">
+        <!-- Theme Toggle -->
+    <button class="dang" id="dang" aria-label="dang"></button>
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Divider -->
+    <div class="panel-divider"></div>
+    
+    <!-- Language Selector -->
+    <div class="language-selector" id="language-selector">
+        <button class="lang-btn active" data-lang="en" title="English">EN</button>
+        <button class="lang-btn" data-lang="vi" title="Vietnamese">VI</button>
+        <button class="lang-btn" data-lang="ja" title="Japanese">JA</button>
+        <button class="lang-btn" data-lang="zh" title="Chinese">ZH</button>
+        <button class="lang-btn" data-lang="de" title="German">DE</button>
+        <button class="lang-btn" data-lang="ru" title="Russian">RU</button>
+    </div>
+    
+    <!-- Divider -->
+    <div class="panel-divider"></div>
+    
+    <!-- Motion Toggle -->
+    <button class="motion-toggle" id="motion-toggle" aria-label="Reduce motion">
+        <i class="fas fa-running"></i>
+    </button>
+</div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-i18n="logo">ALTARE</a>
+            <div class="nav-menu">
+                <a href="#work" class="nav-link" data-i18n="nav.work">Work</a>
+                <a href="#team" class="nav-link" data-i18n="nav.team">Team</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="title-line" data-i18n="hero.line1">We create</span>
+                <span class="title-line" data-i18n="hero.line2">digital</span>
+                <span class="title-line" data-i18n="hero.line3">experiences</span>
+            </h1>
+            <div class="hero-scroll">
+                <span data-i18n="hero.scroll">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="team.title">Our Team</h2>
+        </div>
+        
+        <div class="team-grid" id="team-grid">
+<!-- Member 1 -->
+<div class="team-member" data-member="1">
+    <div class="member-img">
+        <!-- Thay gradient-bg bằng img tag -->
+        <img src="Screenshot 2026-02-07 185805.png" alt="Hai Dang" class="member-photo">
+    </div>
+    <div class="member-info">
+        <h3 class="member-name" data-i18n="team.member1.name">Hai Dang</h3>
+        <p class="member-role" data-i18n="team.member1.role">CEO / Founder</p>
+        <div class="member-social">
+            <a href="https://www.instagram.com/youngdaug" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@young_dangjin" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585227530302" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+</div>
+            <!-- Member 2 -->
+            <div class="team-member" data-member="2">
+                <div class="member-img">
+                    <img src="Screenshot 2026-02-07 185820.png" alt="Gia Huy" class="member-photo">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name" data-i18n="team.member2.name">Gia Huy</h3>
+                    <p class="member-role" data-i18n="team.member2.role">CTO (Technical Lead)</p>
+                        <a href="https://discord.gg/JtmJwyfb" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.tiktok.com/@hgiahuy14811" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/gia.huy.ha.32496" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Member 3 -->
+            <div class="team-member" data-member="3">
+                <div class="member-img">
+                    <img src="Screenshot 2026-02-07 185813.png" alt="Đàm Vĩnh An" class="member-photo">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name" data-i18n="team.member3.name">Đàm Vĩnh An</h3>
+                    <p class="member-role" data-i18n="team.member3.role">CTO (Technical Lead)</p>
+                    <div class="member-social">
+                        <a href="https://discord.gg/JtmJwyfb" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.tiktok.com/@ann78118" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/an.ha.250585" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Optional) -->
+<section id="about" class="about">
+    <div class="section-header">
+        <h2 class="section-title" data-i18n="about.title">About Us</h2>
+    </div>
+    
+    <div class="about-content">
+        <!-- Text content với paragraph đúng -->
+        <div class="about-text">
+            <p data-i18n="about.description1">
+                Zilra Technologies là một đội ngũ làm công nghệ với mục tiêu đơn giản: tạo ra những website và ứng dụng hoạt động tốt, đẹp và thực sự mang lại giá trị cho người dùng.
+            </p>
+            
+            <p data-i18n="about.description2">
+                Chúng tôi chuyên thiết kế và phát triển website, ứng dụng di động và các hệ thống phần mềm theo nhu cầu riêng của từng khách hàng. Dù là website giới thiệu doanh nghiệp, trang thương mại điện tử hay một ứng dụng startup mới, Zilra luôn tập trung vào trải nghiệm người dùng, tốc độ và tính ổn định.
+            </p>
+            
+            <p data-i18n="about.description3">
+                Tại Zilra Technologies, mỗi dự án đều được xây dựng một cách cẩn thận từ giao diện đến cấu trúc hệ thống bên trong. Chúng tôi tin rằng một sản phẩm tốt không chỉ cần đẹp mà còn phải đem lại sức uy tín, tối ưu hiệu suất và có khả năng phát triển lâu dài.
+            </p>
+            
+            <p data-i18n="about.description4">
+                Đội ngũ của chúng tôi gồm những người yêu công nghệ, thích sáng tạo và luôn sẵn sàng thử những giải pháp mới. Zilra không chỉ viết code – chúng tôi cùng khách hàng phân tích vấn đề, từng hướng đi phù hợp và xây dựng giải pháp hiệu quả nhất.
+            </p>
+            
+            <p data-i18n="about.description5">
+                Zilra Technologies mong muốn trở thành đối tác lâu dài, đồng hành cùng doanh nghiệp trong hành trình phát triển và chuyển đổi số.
+            </p>
+        </div>
+        
+        <!-- Skills Grid -->
+        <div class="about-skills">
+            <div class="skill-category">
+                <h3 data-i18n="about.skills.design">Design</h3>
+                <p data-i18n="about.skills.designList">UI/UX, Branding, Motion</p>
+            </div>
+            
+            <div class="skill-category">
+                <h3 data-i18n="about.skills.development">Development</h3>
+                <p data-i18n="about.skills.developmentList">Frontend, WebGL, Animation</p>
+            </div>
+            
+            <div class="skill-category">
+                <h3 data-i18n="about.skills.tools">Tools</h3>
+                <p data-i18n="about.skills.toolsList">Figma, Webflow, GSAP</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <p class="contact-text" data-i18n="contact.description">
+                    Interested in working together or have a project in mind? We'd love to hear from you.
+                </p>
+                
+                <div class="contact-details">
+                    <a href="mailto:hello@altare.com" class="contact-email" data-i18n="contact.email">
+                        zilra.business@gmail.com
+                    </a>
+                    <p class="contact-phone" data-i18n="contact.phone">+84 982397832 </p>
+                    <p class="contact-address" data-i18n="contact.address">
+                        Hy Cương,Phường Việt Trì,Tỉnh Phú THọ
+                    </p>
+                </div>
+            </div>
+            
+<div class="contact-form-container">
+    <form id="contactForm" class="contact-form">
+        <div class="form-group">
+            <label for="name" data-i18n="contact.form.name">Họ tên</label>
+            <input type="text" id="name" name="name" required 
+                   data-i18n-ph="contact.form.name" 
+                   placeholder="Nguyễn Văn A">
+        </div>
+        
+        <div class="form-group">
+            <label for="email" data-i18n="contact.form.email">Email</label>
+            <input type="email" id="email" name="email" required 
+                   data-i18n-ph="contact.form.email" 
+                   placeholder="email@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="message" data-i18n="contact.form.message">Tin nhắn</label>
+            <textarea id="message" name="message" rows="5" required 
+                      data-i18n-ph="contact.form.message" 
+                      placeholder="Xin chào, tôi quan tâm đến..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn" data-i18n="contact.form.submit">
+            Gửi tin nhắn
+        </button>
+    </form>
+</div>
+            
+            <div class="contact-social">
+                <h3 data-i18n="contact.follow">Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@young_dangjin" class="social-link" aria-label="Tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>Tiktok</span>
+                    </a>
+                    <a href="https://discord.gg/JtmJwyfb" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://www.instagram.com/youngdaug" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com/DawgNek/Zilra-code" class="social-link" aria-label="Github">
+                        <i class="fab fa-github"></i>
+                        <span>Github Code</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="footer-logo-text" data-i18n="logo">ALTARE</span>
+                <p class="footer-tagline" data-i18n="footer.tagline">
+                    Creating digital experiences since 2026
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-nav">
+                    <a href="#work" data-i18n="nav.work">Work</a>
+                    <a href="#team" data-i18n="nav.team">Team</a>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright" data-i18n="footer.copyright">
+                    © 2026 zilra. All rights reserved.
+                </p>
+                
+                <div class="footer-controls">
+                    <button class="theme-toggle small" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector small">
+                        <select id="footer-lang-select" aria-label="Select language">
+                            <option value="en">English</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh">中文</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Inline fallback for missing translations -->
+    <script>
+        // Add missing translations for about section
+        if (typeof window.ALTARE_APP !== 'undefined') {
+            window.ALTARE_APP.translations = window.ALTARE_APP.translations || {};
+            window.ALTARE_APP.translations.about = {
+                title: "About Us",
+                description1: "We are a creative agency focused on crafting exceptional digital experiences. Our team combines design thinking with technical expertise to deliver innovative solutions.",
+                description2: "With a passion for innovation and attention to detail, we transform ideas into impactful digital products that resonate with users.",
+                stat1: { number: "50+", label: "Projects Completed" },
+                stat2: { number: "5", label: "Years Experience" },
+                stat3: { number: "100%", label: "Client Satisfaction" }
+            };
+            
+            window.ALTARE_APP.translations.footer = window.ALTARE_APP.translations.footer || {};
+            window.ALTARE_APP.translations.footer.privacy = "Privacy Policy";
+            window.ALTARE_APP.translations.footer.terms = "Terms of Service";
+        }
+    </script>
+    <script>
+window.addEventListener("load", function () {
+  document.body.classList.add("loaded");
+});
+</script>
+
+</body>
+</html>
