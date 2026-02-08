@@ -11,6 +11,9 @@ let APP_STATE = {
     isInitialized: false
 };
 
+document.documentElement.setAttribute("data-theme", "dark");
+
+
 // ===== DOM READY =====
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 ALTARE Portfolio - DOM Ready');
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===== MAIN INITIALIZATION =====
-function initApplication() {
+function initApplication() {    
     try {
         console.log('🔧 Initializing application...');
         
@@ -99,14 +102,7 @@ function forceShowContent() {
 function loadUserPreferences() {
     try {
         // Theme
-        const savedTheme = localStorage.getItem('altare_theme');
-        if (savedTheme) {
-            APP_STATE.theme = savedTheme;
-        } else {
-            // Auto-detect system preference
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            APP_STATE.theme = prefersDark ? 'dark' : 'light';
-        }
+        APP_STATE.theme = 'dark';
         
         // Language
         const savedLang = localStorage.getItem('altare_language');
@@ -154,7 +150,7 @@ function initThemeSystem() {
     
     // Setup toggle
     themeToggle.addEventListener('click', function() {
-        const newTheme = APP_STATE.theme === 'light' ? 'dark' : 'light';
+        const newTheme = APP_STATE.theme === 'dark';
         applyTheme(newTheme);
         
         // Update particles
